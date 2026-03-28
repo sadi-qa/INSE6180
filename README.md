@@ -1,8 +1,6 @@
 # Association Mining Project (Apriori, FP-growth, Eclat, and TriHybrid-PPAM)
 
-This project contains implementations of three classic frequent pattern mining algorithms
-(from three papers you provided) plus a new hybrid algorithm **TriHybrid‑PPAM** that combines
-ideas from all three.
+This project contains implementations of three classic frequent pattern mining algorithms plus a new hybrid algorithm **TriHybrid‑PPAM** that combines ideas from all three.
 
 ## Folder structure
 
@@ -43,12 +41,6 @@ Windows (Git Bash / MINGW):
 ```bash
 python -m venv .venv
 source .venv/Scripts/activate
-```
-
-macOS/Linux:
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
 ```
 
 ### 3. Install requirements
