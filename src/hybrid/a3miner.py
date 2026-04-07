@@ -21,17 +21,7 @@ def a3mine(
     minsup: float,
     strategy: str = "auto",
 ) -> A3MinerResult:
-    """
-    A3Miner (Adaptive 3-way Miner): an 'algorithm portfolio' for frequent itemset mining.
-
-    It uses the three classic algorithms as engines (Apriori, FP-growth, Eclat) and can also
-    consider the project-specific hybrid (TriHybrid-PPAM). The engine is selected by simple,
-    explainable heuristics based on dataset shape and minsup.
-
-    strategy:
-      - "auto": choose engine based on heuristics
-      - "apriori" / "fpgrowth" / "eclat" / "trihybrid": force engine
-    """
+    
     n = len(transactions_list)
 
     # basic shape stats
