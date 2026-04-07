@@ -19,25 +19,7 @@ def trihybrid_ppam(
     minsup: float,
     density_threshold: float = 2.6
 ) -> TriHybridResult:
-    """
-    TriHybrid-PPAM (Pair-Pruned Adaptive Miner) - a hybrid algorithm combining ideas from:
-      - Apriori: downward-closure (pruning logic)
-      - Eclat: vertical tid-lists for fast pair counting
-      - FP-growth: conditional mining without explicit candidate generation
-
-    Steps:
-      1) Count frequent 1-itemsets (support >= minsup).
-      2) Build vertical tid-lists and compute frequent 2-itemsets (pairs) by intersection.
-         This yields a "pair-pruning graph" that tells which items can co-occur frequently.
-      3) For each item i (processed least frequent first), build a projected database of
-         transactions containing i, keeping only items that:
-           - are more frequent than i (FP-growth uniqueness)
-           - form a frequent pair with i (pair pruning)
-      4) Mine the projected database using FP-growth if it's dense, else Eclat.
-         Then append i to every discovered pattern.
-
-    Returns frequent itemsets with support fractions + useful stats.
-    """
+   
     n = len(transactions_list)
     minsup_count = max(1, int(minsup * n + 1e-9))
 
